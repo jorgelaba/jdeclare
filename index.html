@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+		<script>
+			/*****
+			* dev  - Desenvolvimento
+			* test - Teste
+			* prod - Produção
+			*/
+		  	var ENVIRONMENT = 'dev'; 
+
+		  	/*****
+		  	* Para o carregamento assincrono o BASE URL nao pode ser um
+		  	* diretorio físico, por isso para o seu funcionamento deve trabalhar
+		  	* em algum servidor web. (Apache, Nginx ...)
+		  	*/
+		  	var BASE_URL = "http://localhost/jdeclare/";
+		</script>
+
+		<!--
+			Inicia o carregamento do script responsavel por inicializar o loader e a leitura das tags
+		 	data-onc-script ou data-onc-widget.
+		-->
+		<script data-main="js/app.js" src="js/lib/requireJquery.js"></script>
+	</head>
+	
+	<!-- 
+		A tag body esta chamando um arquivo localizado na pasta
+		app na qual irá carregar o script home.js e chamar o metodo init(). 
+		O funcionamento seria o mesmo caso aplica-se com require js:
+
+		require(['app/home'], function(home) {
+			home.init();
+		});
+	-->
+	<body data-onc-script="app/home, app/main">
+
+		<h1>JDECLARE</h1>
+
+	</body>
+</html>
